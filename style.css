@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('hello-kitty-bg.gif') center center / cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+.container {
+  position: relative;
+  width: 320px;
+  height: 240px;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ffc0cb;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #ffb6c1;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 1s ease-in-out;
+  z-index: 3;
+}
+
+.body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #ffc0cb;
+  clip-path: polygon(0 100%, 100% 100%, 50% 0%);
+  z-index: 2;
+}
+
+.letter {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100
