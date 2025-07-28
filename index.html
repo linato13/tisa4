@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Tislit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Letter for Tislit</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
   <audio id="bg-music" src="your-music.mp3" preload="auto" loop></audio>
 
-  <div class="container" onclick="openEnvelope()">
-    <div class="envelope">
+  <div class="envelope-container" id="envelope-container">
+    <div class="envelope" id="envelope">
       <div class="flap"></div>
-      <div class="body"></div>
-      <div class="letter">
-        <p>Happy Birthday</p>
-        <p>To You</p>
-        <p>Tislit</p>
-        <p class="signature">With love, Anas</p>
+      <div class="letter" id="letter">
+        <p class="to">To my love</p>
+        <h1>Happy Birthday To You, Tislit</h1>
       </div>
     </div>
   </div>
