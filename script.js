@@ -1,15 +1,31 @@
-const flap = document.querySelector(".flap");
-const letter = document.querySelector(".letter");
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
 const audio = document.getElementById("bg-music");
+let musicStarted = false;
 
-let opened = false;
+envelope.addEventListener("click", () => {
+  envelope.classList.add("open");
 
-function openEnvelope() {
-  if (opened) return;
-  flap.style.transform = "rotateX(-180deg)";
-  letter.style.top = "0";
-  audio.play().catch(e => {
-    console.log("User interaction required to play audio:", e);
-  });
-  opened = true;
+  if (!musicStarted) {
+    audio.play();
+    musicStarted = true;
+  }
+
+  spawnHearts(10);
+});
+
+function spawnHearts(count) {
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "❤";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = window.innerHeight - 50 + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
 }
